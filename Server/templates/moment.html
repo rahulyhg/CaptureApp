@@ -1,0 +1,79 @@
+<div style="background-color:#EEE;width:100%;height:100%;overflow:scroll;">
+
+    <div class="row" style="max-width:100%;padding-top:50px;">
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Moment</h2>
+            <hr class="primary">
+        </div>
+        <button class="btn btn-success" style="position:absolute;right:20px;top:70px" ng-click="saveClicked()">Save</button>
+
+        <button class="btn" style="position:fixed;right:130px;top:70px" ng-click="deleteClicked()">Delete</button>
+    </div>
+    <div class="row" style="max-width:100% ;padding-top:50px;">
+        <!--ui-gmap-google-map center='map.center' zoom='map.zoom' style="max-height:100px !important;position:relative !important;"></ui-gmap-google-map-->
+
+    </div>
+    <div class="row" style="max-width:100%;">
+        <form style="max-width:100%;padding-left:50px;">
+            <div class="form-group" style="height:200px;margin-bottom:50px;">
+                <!--label for="map">Location</label-->
+                <div style="background-color:#EEE;height:100%;width:100%;padding:0px !important;" class="form-control">
+                    <div style="position: relative;height: 100%;width: 100%;">
+                        <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+                            <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id" icon="marker.icon">
+                            </ui-gmap-marker>
+
+                        </ui-gmap-google-map>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Title</label>
+                <input type="input" class="form-control" id="exampleInputEmail1" placeholder="Title" value="{{title}}">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Comment</label>
+                <input type="input" class="form-control" id="exampleInputPassword1" placeholder="Comment" value="{{comment}}">
+            </div>
+            <div class="form-group" nv-file-drop="" uploader="imageUploader" filters="queueLimit, customFilter">
+                <label for="imagesSlider">Images</label>
+                <ul style="background-color:#FFF;width:100%;height:150px;overflow:scroll;" id="imagesSlider" class="form-control">
+                    <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4 list-group-item" style="height:100%;padding:0px !important;margin-right:15px;" ng-repeat="image in images" ng-click="imageClicked(image)">
+                        <button class="btn btn-success" style="position:absolute;right:3px;top:3px;padding:5px !important;" ng-click="deleteMediaClicked(image)">Delete</button>
+                        <img src="{{image.url}}" style="width:100%;height:100%;margin-top:auto;margin-bottom:auto;" />
+                    </li>
+                </ul>
+                <div class="well my-drop-zone" nv-file-over="" uploader="imageUploader">
+                    <div class="progress" style="">
+                        <div class="progress-bar" role="progressbar" ng-style="{ 'width': imageUploader.progress + '%' }"></div>
+                    </div>
+                    <p align="center">Drop File to add Image.(Max 3MB)</p>
+
+                </div>
+            </div>
+
+            <div class="form-group" nv-file-drop="" uploader="videoUploader" filters="queueLimit, customFilter">
+                <label for="videosSlider">Videos</label>
+                <ul style="background-color:#FFF;width:100%;height:200px;overflow:scroll;" id="videosSlider" class="form-control">
+                    <li class="col-lg-3 col-md-3 col-sm-3 col-xs-4 list-group-item" style="height:100%;padding:0px !important;margin-right:15px;" ng-repeat="video in videos">
+                        <button class="btn btn-success" style="position:absolute;right:3px;top:3px;padding:5px !important;" ng-click="deleteMediaClicked(video)">Delete</button>
+                        <video src="{{video.url}}" style="width:100%;max-height:150px;margin-top:30px;margin-bottom:0px;" controls>
+                            Your browser does not support the video tag.
+                        </video>
+                    </li>
+                </ul>
+                <div class="well my-drop-zone" nv-file-over="" uploader="videoUploader">
+                    <div class="progress" style="">
+                        <div class="progress-bar" role="progressbar" ng-style="{ 'width': videoUploader.progress + '%' }"></div>
+                    </div>
+                    <p align="center">Drop File to add Video.(Max 3MB)</p>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+
+</div>

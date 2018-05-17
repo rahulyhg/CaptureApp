@@ -1,0 +1,25 @@
+<div style="background-color:#EEE;width:100%;height:100%;">
+
+    <div class="row" style="max-width:100%;padding-top:50px;">
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading">My Moments</h2>
+            <hr class="primary">
+        </div>
+    </div>
+    <ul class="list-group" style="max-width:100%;max-height:75%;background-color:#EEE;overflow:scroll;margin-left:20px;margin-right:20px;">
+        <li class="list-group-item moment-item" ng-repeat="moment in moments" style="height:80px">
+            <a ng-click="selectMoment(moment)">
+                <div class="col-lg-1">
+                    <img class="round-image" style="display:inline-block;" src="{{moment.Image}}">
+                </div>
+                <div class="col-lg-8">
+                    <h4 style="margin-left:30px;color:#999">{{moment.Title}} </h4>
+                    <h5 style="margin-left:30px;color:#AAA;margin-top:-8px;">{{moment.Comment}} </h5>
+                </div>
+                <h5 style="color:#AAA;position:absolute;right:90px;" align="right">{{moment.Date}} </h5>
+                <i class="fa fa-angle-right fa-3x" style="position:absolute;right:20px;top:18px;color:rgb(231,52,42);"></i>
+                
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,39 @@
+<div style="width:100%;height:100%">
+    <ui-gmap-google-map center='map.center' zoom='map.zoom' style="opacity:0.5;top:50px !important;"></ui-gmap-google-map>
+    <div class="login-box" style="padding:50px;">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 col-sm-4 col-sm-offset-4">
+                <div class="panel panel-default" style="padding:20px;">
+                    <div class="panel-body">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="inputUsername" placeholder="Email" ng-model="username">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="password">
+                                </div>
+                            </div>
+                            <div class="form-group" ng-hide="!registerForm">
+                                <div class="col-sm-12">
+                                    <input type="password" class="form-control" id="inputConfirm" placeholder="Confirm Password" required="" ng-model="confirmPassword">
+                                </div>
+                            </div>
+                            <div class="form-group last">
+                                <div class="col-sm-8">
+                                    <button class="btn btn-success" ng-click="loginButtonClicked()">{{loginTitle}}</button>
+                                </div>
+                                <div class="col-sm-4" style="padding-top:10px">
+                                    <a ng-click="registerClicked()">{{registerTitle}}</a>
+                                </div>
+                            </div>
+                            <p align="center">{{errorMessage}}</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

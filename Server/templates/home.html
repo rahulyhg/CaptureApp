@@ -1,0 +1,26 @@
+<div style="background-color:#EEE;height:100%;width:100%;">
+    <div style="position: relative;height: 100%;width: 100%;">
+        <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+            <ui-gmap-markers models="randomMarkers" coords="'self'" icon="'icon'" events="map.markersEvents" fit="true">
+                <ui-gmap-window show="map.window.show" coords="map.window.model" options="map.window.options" closeclick="map.window.closeClick()">
+                    <div style="width:475px;height:100px;background-color:#FFF">
+                        <div class="col-sm-3">
+                            <img src="{{image}}" class="round-image-big" style="margin-top:10px;">
+                        </div>
+                        <div class="col-sm-6">
+                            <h3>{{title}}</h3>
+                            <h4>{{comment}}</h4>
+                            <h5>{{date}}</h5>
+                        </div>
+                        <div class="col-sm-3">
+                            <button class="btn btn-success" ng-click="$parent.showMomentClicked();" style="margin-top:40px;">Show</button>
+                        </div>
+                    </div>
+                </ui-gmap-window>
+            </ui-gmap-markers>
+
+
+        </ui-gmap-google-map>
+    </div>
+</div>
+
